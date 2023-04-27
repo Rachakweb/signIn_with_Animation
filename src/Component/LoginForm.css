@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  background: black;
+}
+.body{
+position: relative;
+width: 100%;
+height: 100vh;
+overflow: hidden;
+}
+.main{
+  /* height: 100vh;   */
+  /* border: 2px solid red; */
+  /* position: relative; */
+
+}
+.bubble{
+ position: relative;
+ display: flex; 
+}
+.bubble span{
+  position: relative;
+  width: 15px;
+  height: 15px;
+  background: rgb(140, 239, 221);
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgb(87, 92, 93), 0 0 50px rgb(156, 246, 223), 0 0 100px rgb(219, 227, 227);
+  animation: animate 15s linear infinite;
+  animation-duration: calc(100s/var(--i));
+  opacity: 0.5;
+}
+.bubble span:nth-child(even)
+{
+  max-width: 10px;
+  max-height: 10px;
+  background: rgb(154, 219, 236);
+  box-shadow: 0 0 0 10px rgb(90, 99, 100), 0 0 100px rgb(144, 249, 249), 0 0 100px white;
+}
+@keyframes animate{
+  0%{
+    transform: translateY(100vh) scale(0);
+  }
+  100%{
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+.login{
+  /* border: 2px solid white; */
+    /* width: 300px; */
+    height: min-content;
+    position: absolute;
+    top: 20%;
+    color: white;
+    border-radius: 5px;
+    /* color: rgb(9, 9, 9); */
+    background-color: white;
+    padding: 10px;
+    box-shadow: 1px 1px 10px red ;
+    
+    opacity: 0.2;
+    transition: opacity 1s, box-shadow 1s, background-color 5s, color 2s;
+
+}
+.login:hover{
+  opacity: 1;
+  box-shadow: 6px 5px 10px rgb(32, 236, 240) ;
+  background-color: black;
+  color: white;
+  
+}
+.img{
+  background-image: url('/src/dovetail.jpg'); 
+  width: 250px; 
+  height: 50px;
+  
+  background-size: cover; /* set the image to cover the container */
+  background-position: center; /* set the image to be centered within the container */
+  /* filter: invert(100%); */
+}
